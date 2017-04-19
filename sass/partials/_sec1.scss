@@ -1,0 +1,121 @@
+.section1 {
+    background-image: url(../images/asphaltTop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #101010;
+    height: 10vw;
+}
+
+nav {
+    margin-top: 1.5vw;
+    margin-bottom: 0.5vw;
+    color: white;
+    font-size: 2vw;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+}
+
+
+.afterNav {
+    min-height: 75vh;
+    color: white;
+    background-color: #101010;
+        .arrows {
+            position: absolute;
+            bottom: 2%;
+        }
+            .fa {
+                cursor: pointer;
+            }
+}
+
+
+.circle1 {
+    @extend %circle;
+    background-color: #0e8044; /*green*/
+    opacity: 0.7;
+    .aBox {
+        span {
+            position: absolute;
+            left: 39%;
+            top: 28%;
+            padding: 0;
+        }
+    }
+}
+
+.aboutBox {
+    display: none;
+        span {
+            position: absolute;
+            top: 28%;
+            left: 3%;
+            color: white;
+        }
+}
+
+
+.circle2 {
+    @extend %circle;
+    background-color: #ffce00; /*yellow*/
+    opacity: 0.7;
+    .bBox {
+        span {
+            position: absolute;
+            left: 39%;
+            top: 28%;
+            padding: 0;
+        }
+    }
+}
+
+.beBox {
+    display: none;
+    opacity: 1;
+        span {
+            position: absolute;
+            top: 28%;
+            left: 3%;
+            color: white;
+        }
+}
+
+.circle3 {
+    @extend %circle;
+    background-color: #f53240; /*red*/
+    opacity: 0.7;
+    .cBox {
+        span {
+            position: absolute;
+            left: 39%;
+            top: 28%;
+            padding: 0;
+        }
+    }
+}
+
+.ceBox {
+    display: none;
+    opacity: 1;
+        span {
+            position: absolute;
+            top: 28%;
+            left: 3%;
+            color: white;
+        }
+}
+
+.circle4 {
+    @extend %circle;
+    background-color: #ffffff;
+    background-image: url(../images/home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.fa-arrow-circle-down {
+    color: rgba(255,255,255,0.3);
+}

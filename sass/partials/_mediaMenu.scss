@@ -1,0 +1,93 @@
+.mobile {
+        display: none;
+    }
+
+.hamBox {
+    position: fixed;
+    z-index: 1;
+    left: 0; //for firefox
+}
+
+    .hamburger {
+        position: fixed;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 0.5rem;
+        display: none;
+        cursor: pointer;
+        background-color: white;
+        margin-top: 0.9rem;
+        margin-bottom: 0.5rem;
+        z-index: 2;
+        span {
+            width: 60%;
+            margin: 0.2rem;
+            height: 10%;
+            border-radius: 0.2rem;
+            background-color: #0e8044;
+            left: 20%; //mozilla
+        }
+    }
+
+.mobileNav {
+    display: none;
+    width:100%;
+    height: 35%;
+    position: fixed;
+    top: 5rem;
+    z-index: 1;
+    nav {
+        height:100%;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+    .about {
+        width: 100%;
+        height: 25%;
+        font-size: 2.2em;
+        background-color: rgba(0,0,0,0.95);
+        border-bottom: 0.1rem dotted rgba(255,255,255, 0.5);
+        cursor: pointer;
+    }
+    .portfolio {
+        width: 100%;
+        height: 25%;
+        font-size: 2.2em;
+        background-color: rgba(0,0,0,0.95);
+        border-bottom: 0.1rem dotted rgba(255,255,255, 0.5);
+        cursor: pointer;
+    }
+    .contact {
+        width: 100%;
+        height: 25%;
+        font-size: 2.2em;
+        background-color: rgba(0,0,0,0.95);
+        border-bottom: 0.1rem dotted rgba(255,255,255, 0.5);
+        cursor: pointer;
+    }
+    .home2 {
+        width: 100%;
+        height: 25%;
+        font-size: 2.2em;
+        background-color: rgba(0,0,0,0.95);
+        cursor: pointer;
+    }
+}
+
+.about:hover {
+    background-color: #0e8044;
+}
+
+.portfolio:hover {
+    background-color: #ffce00;
+}
+
+.contact:hover {
+    background-color: #f53240;
+}
+
+.home2:hover {
+    background-color: rgba(0,0,0,0.4);
+}
