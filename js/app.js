@@ -1,20 +1,52 @@
 jQuery(document).ready(function(){
+    
+    
+    
 
-    var show = $('.show');
-
-    show.on('click', function() {
-
-        var thisBtn = $(this);
-
+    function currenciesAll() {
+        
+        
+        
         $.ajax({
-            url: 'http://api.nbp.pl/api/exchangerates/rates/c/usd/2016-04-04/?format=json'
-            
-        }).done(function(response){
-            thisBtn.next().html(response).slideDown();
+            type: 'GET',
+            url: 'https://api.nbp.pl/api/exchangerates/tables/a/',
+            dataType: 'json'
+        }).done(function(data){
+            jQuery.each(data, function(i, item) {
+                console.log(data[0].rates);
+                var currencies = data[0].rates[1].mid;
+                console.log(currencies);
+                
+            })
         }).fail(function(error){ //... });
 
         });
-    });
+        
+        var formControl1 = jQuery('.form-control1');
+        
+        var formControl2 = jQuery('.form-control2');
+        
+        jQuery('#btn').on('click', function(){
+            console.log(formControl1.val());
+            console.log(formControl1.val());
+        })
+    };
+    
+    currenciesAll();
+        
+    
+
+
+        
+
+    
+        
+            
+            
+
+    
+    
+   
 
     
     

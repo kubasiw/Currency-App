@@ -17,10 +17,29 @@
 </head>
 <body>
    
-    <div class="box">
-        <h4>USD</h4>
-        <button class="show">show usd to pln</button>
-        <div class="inject"></div>
+    <div class="box d-flex flex-column justify-content-around">
+        <select class="form-control1">
+            <option value="USD">dolar amerykański</option>
+            <option value="EUR">euro</option>
+            <option value="HUF">forint węgierski</option>
+            <option value="CHF">frank szwajcarski</option>
+            <option value="GPB">funt szterling</option>
+        </select>
+        
+        <label for="">chash amount</label>
+        <input type="number" name="amount">
+        
+        <select class="form-control2">
+            <option value="USD">dolar amerykański</option>
+            <option value="EUR">euro</option>
+            <option value="HUF">forint węgierski</option>
+            <option value="CHF">frank szwajcarski</option>
+            <option value="GPB">funt szterling</option>
+        </select>
+        
+        <button id="btn"> COUNT </button>
+        
+        <span class="result"></span>
     </div>
     
     
