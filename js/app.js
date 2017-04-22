@@ -8,37 +8,40 @@ jQuery(document).ready(function(){
             
             $.ajax({
                 type: 'GET',
-                url: 'https://api.nbp.pl/api/exchangerates/tables/a/',
+                url: 'https://api.nbp.pl/api/exchangerates/tables/a/last/2',
                 dataType: 'json'
                 
             }).done(function(data){
                 
                 // variable with all currencies / its array
-                var dataArray = data[0].rates;
-                    //console.log(dataArray);
-                    
+                var dataArray1 = data[0].rates;
+                var dataArray2 = data[1].rates;
+                var currentDate = data[1].effectiveDate;
+//                    console.log(dataArray1);
+//                    console.log(dataArray2);
+//                    console.log(currentDate);
+                var title = jQuery('.title');
+                title.append("<span>" + "last update: " + currentDate + "</span>");
+                
                 var tr;
                 // so we have to loop throught this array to get some interesting data
                 // and put it to new DOMelements (table)
-                for (var i=0; i<dataArray.length; i++) {
-                    tr = jQuery('<tr/>');
-                    tr.append("<th>" + (i+1) + "</th>");
-                    tr.append("<td>" + dataArray[i].currency + "</td>");
-                    tr.append("<td>" + dataArray[i].code + "</td>");
-                    tr.append("<td>" + dataArray[i].mid.toFixed(3) + "</td>");
-                    jQuery('tbody').append(tr);
-                    tr.addClass('clickMe');
-                    jQuery('tr td:last-child').addClass('d-flex')
-                                              .addClass('justify-content-end');
-                    jQuery('tr th:last-child').addClass('d-flex')
-                                              .addClass('justify-content-end');
+                for (var i=0; i<dataArray2.length; i++) {
                     
+                        tr = jQuery('<tr/>');
+                        tr.append("<th>" + (i+1) + "</th>");
+                        tr.append("<td>" + dataArray2[i].currency + "</td>");
+                        tr.append("<td>" + dataArray2[i].code + "</td>");
+                        tr.append("<td>" + dataArray2[i].mid.toFixed(3) + "</td>");
+                        
+                        jQuery('tbody').append(tr);
+                        tr.addClass('clickMe');
+    //                    jQuery('tr td:last-child').addClass('d-flex')
+    //                                              .addClass('justify-content-end');
+    //                    jQuery('tr th:last-child').addClass('d-flex')
+    //                                              .addClass('justify-content-end');
+                        
                 };
-                
-                jQuery('.clickMe').on('click', function(){
-                    console.log(this);
-                });
-                
             }).fail(function(error){ //... });
 
             });
