@@ -1,5 +1,10 @@
 body {
     font-family: 'Ubuntu', sans-serif;
+    background-color: #828b90;
+}
+
+header {
+    min-height: 10rem;
 }
 
 .title {
@@ -36,4 +41,25 @@ tbody {
 .chosen2 {
     font-size: 2.5em;
     color: mediumblue;
+}
+
+button {
+    margin-right:1em;
+}
+
+footer {
+    min-height:40px;
+    background-color: #222222;
+        .row {
+            margin-bottom: 0;
+        }
+            .footerRow {
+                //height: 2em;
+                background-color: #222222;
+                a {
+                    text-decoration: none;
+                    font-size: 0.6rem;
+                    color: #9d9d9d; 
+                }
+            }
 }

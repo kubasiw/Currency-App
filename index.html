@@ -16,59 +16,91 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
-    <div class="container-fluid title">
-        <div class="row">
-            <div class="col-12"><h4 style="font-size:4em;">CurrencyApp ... it will be! For sure !</h4></div>
+    <header class="d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center"><div><img class="img-fluid" src="./images/logo.png" alt=""></div></div>
+            </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6">
-                <table class="table table-sm table-inverse table-borderd">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>currency (country)</th>
-                            <th>code</th>
-                            <th>currency rate (PLN)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    </header>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6  col-sm-12 col-12 tableDate">
+                    <table class="table table-sm table-inverse table-borderd">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>currency (country)</th>
+                                <th>code</th>
+                                <th>currency rate (PLN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-6">
-                <h4>You can exchange some money.</h4>
-                <br/>
-                <h4>choose currency:</h4>
-                <br/>
-                <select class="custom-select select1">
-                </select>
-                <br/>
-                <br/>
-                <label for="example-number-input" class="col-4 col-form-label">type amount:</label>
-                <div class="col-4">
-                <input class="form-control" type="number" value="" id="example-number-input">
+                        </tbody>
+                    </table>
                 </div>
-                <br/>
-                <br/>
-                <h4>choose currency you'd like to buy:</h4>
-                <br/>
-                <select class="custom-select select2">
-                </select>
-                <br/>
-                <br/>
-                <button type="submit" class="btn btn-primary">exchange</button>
-                <br/>
-                <br/>
-                <button type="submit" class="btn btn-primary">reset</button>
-                <br/>
-                <div></div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    
+                    <br/>
+                    <div class="row">
+                    <h4>You can exchange some money.</h4>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    
+                    <div class="row d-flex flex-column">
+                        <h4>choose currency:</h4>
+                        <select class="custom-select select1">
+                            <option>złoty polski</option>
+                        </select>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    
+                    <div class="row d-flex flex-column">
+                        <label class="col-form-label">type amount:</label>
+                        <input class="form-control" type="number" value="" id="example-number-input">
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    
+                    <div class="row d-flex flex-column">
+                        <h4>choose currency you'd like to buy:</h4>
+                        <select class="custom-select select2">
+                            <option>złoty polski</option>
+                        </select>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary btn-success button1">exchange</button>
+                        <button type="submit" class="btn btn-primary btn-danger">reset</button>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    
+                    <div class="row">
+                        <div class="resultBox"></div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    
+    <footer class="container-fluid d-flex align-items-center justify-content-center">
+           <div class="row footerRow align-self-center">
+               <div class="col-12 d-flex justify-content-center"><span class="d-flex align-items-center"><a href="http://www.jakubsiwinski.pl">&#9400; copyright 2017 - www.jakubsiwinski.pl</a></span></div>
+           </div>
+    </footer>
     
     
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

@@ -19,8 +19,8 @@ jQuery(document).ready(function(){
                 console.log(dataArray1);
 //                    console.log(dataArray2);
 //                    console.log(currentDate);
-            var title = jQuery('.title');
-            title.append("<span>" + "last update: " + currentDate + "</span>");
+            var tableDate = jQuery('.tableDate');
+            tableDate.prepend("<span>" + "exchange rates last update: " + currentDate + " by api.nbp.pl" + "</span>");
 
             var tr;
             // so we have to loop throught this array to get some interesting data
@@ -51,19 +51,63 @@ jQuery(document).ready(function(){
             
             for (var i=0; i<dataArray2.length; i++) {
                 
-                select1.append("<option>" + dataArray2[i].currency + " - " + dataArray2[i].code + "</option>");
-                select2.append("<option>" + dataArray2[i].currency + " - " + dataArray2[i].code + "</option>");
+                select1.append("<option>" + dataArray2[i].currency + "</option>");
+                select2.append("<option>" + dataArray2[i].currency + "</option>");
                 
                 var option1 = jQuery('.select1 option');
                 var option2 = jQuery('.select2 option');
-                
-                for (var j=0; j<option1.length; j++) {
-                    var $this = jQuery(this);
-                    if ((dataArray2[i].currency + " - " + dataArray2[i].code) === option1[j].innerText) {
-                        console.log(option1[i]);
-                    }
-                };
             };
+            
+            
+            
+            function count() {
+                
+                var button1 = jQuery('.button1');
+                var input = jQuery('input');
+                var resultBox = jQuery('.resultBox');
+                
+                
+                button1.on('click', function() {
+                    
+                    var first;
+                    var second;
+                    var amount = input.val();
+                    
+                    //console.log(amount);
+                    
+                    //console.log(select1.val());
+                    for (var i=0; i<dataArray2.length; i++) {
+                        
+                        if (select1.val() == dataArray2[i].currency) {
+                            //console.log(dataArray2[i].mid);
+                            first = dataArray2[i].mid;
+                        }
+                        
+                        if (select1.val() == "złoty polski") {
+                            first = 1;
+                        }
+                        
+                        if (select2.val() == dataArray2[i].currency) {
+                            //console.log(dataArray2[i].mid);
+                            second = dataArray2[i].mid;
+                        }
+                        
+                        if (select2.val() == "złoty polski") {
+                            second = 1;
+                        }
+                        
+                    };
+//                    console.log(first);
+//                    console.log(second);
+                    
+                    resultBox.addClass('');
+                    resultBox.append((first * amount) / second.toFixed(3));
+                    
+                });
+                
+                
+            };
+            count();
             
             
         
