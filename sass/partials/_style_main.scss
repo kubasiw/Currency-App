@@ -81,12 +81,6 @@ button {
                 }
 }
 
-//@media (max-width: 360px) {
-//    .resultPar {
-//        font-size: 1.5em;
-//    }
-//}
-
 .error {
     background-color: #d9534f;
 }
@@ -98,5 +92,19 @@ footer {
         text-decoration: none;
         font-size: 0.8rem;
         color: #9d9d9d; 
+    }
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 440px) {
+    .tableDate span {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 360px) {
+    .tableDate span {
+        font-size: 0.6em;
     }
 }

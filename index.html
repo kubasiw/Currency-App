@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+   
+    <!-- HEADER -->
+    
     <header class="d-flex align-items-center">
         <div class="container-fluid">
             <div class="row">
@@ -23,10 +26,16 @@
             </div>
         </div>
     </header>
+    
+    <!-- WHOLE MAIN SECTION FOR OUR APP - section1 -->
+    
     <section class="section1">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 tableDate">
+                   
+                   <!-- TABLE START HERE -->
+                   
                     <table class="table table-responsive table-sm">
                         <thead>
                             <tr>
@@ -41,8 +50,10 @@
                         </tbody>
                     </table>
                 </div>
+                
+                <!-- EXCHANGE BOXES -->
+                
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    
                     <br/>
                     <div class="row">
                         <div class="col-12">
@@ -52,6 +63,8 @@
                     
                     <br/>
                     <br/>
+                    
+                    <!-- SELECT FOR CURRENCY WE'D LIKE TO SPEND -->
                     
                     <div class="row">
                         <div class="col-12 d-flex flex-column">
@@ -65,6 +78,8 @@
                     <br/>
                     <br/>
                     
+                    <!-- INPUT AREA -->
+                    
                     <div class="row d-flex flex-column">
                         <div class="col-12">
                             <label class="col-form-label">type amount:</label>
@@ -74,6 +89,8 @@
                     
                     <br/>
                     <br/>
+                    
+                    <!-- SELECT FOR CURRENCY WE'D LIKE TO BUY -->
                     
                     <div class="row">
                         <div class="col-12 d-flex flex-column">
@@ -87,6 +104,8 @@
                     <br/>
                     <br/>
                     
+                    <!-- BUTTONS FOR EXCHANGE AND RESET -->
+                    
                     <div class="row">
                         <div class="col-12 ">
                             <button type="submit" class="btn btn-primary btn-success button1">exchange</button>
@@ -97,24 +116,25 @@
                     <br/>
                     <br/>
                     
+                    <!-- RESULT BOX APPEAR HERE -->
+                    
                     <div class="row">
                         <div class="col-12">
                             <div class="resultBox"></div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- FOOTER -->
     
     <footer class="container-fluid d-flex align-items-center justify-content-center">
            <div class="row footerRow align-self-center">
                <div class="col-12 d-flex justify-content-center"><span class="d-flex align-items-center"><a href="http://www.jakubsiwinski.pl">&#9400; copyright 2017 - www.jakubsiwinski.pl</a></span></div>
            </div>
     </footer>
-    
-    
     
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
