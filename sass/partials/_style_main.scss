@@ -7,6 +7,9 @@ header {
     min-height: 10rem;
 }
 
+.section1 {
+    min-width:100vh;
+}
 .title {
     min-height: 15vh;
 }
@@ -48,6 +51,7 @@ button {
 }
 
 .resultBox {
+    height: 10rem;
     background-color: #585e61;
     border-radius: 5px 5px 5px 5px;
     min-height: 3rem;
@@ -57,6 +61,10 @@ button {
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
     }
+}
+
+.error {
+    background-color: #d9534f;
 }
 
 footer {
