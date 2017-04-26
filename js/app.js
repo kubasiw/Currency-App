@@ -36,13 +36,14 @@ jQuery(document).ready(function(){
                 jQuery('tbody').append(tr);
                 tr.addClass('clickMe');
                 
+                
                 var tdCurr = jQuery('.clickMe td:nth-child(2)');
                 var tdCode = jQuery('.clickMe td:nth-child(3)');
                 var tdMid = jQuery('.clickMe td:nth-child(4)');
 
             tdCurr.addClass('curr');
             tdCode.addClass('code');
-            tdMid.addClass('mid');
+            tdMid.addClass('mid d-flex justify-content-end');
                 
             };
             
@@ -108,7 +109,7 @@ jQuery(document).ready(function(){
                         
                         resultBox.empty();
                         resultBox.addClass('error');
-                        resultBox.addClass('resultBox col-12 d-flex flex-column justify-content-around');
+                        resultBox.addClass('resultPar col-12 d-flex flex-column justify-content-around');
                         resultBox.append("<span>" + "Please choose two different currencies." + "</span>");
                         resultBox.append("<span>" + "Make sure that your ammount is > 0" + "</span>");
                     
@@ -116,25 +117,23 @@ jQuery(document).ready(function(){
                         
                         resultBox.empty();
                         resultBox.addClass('error');
-                        resultBox.addClass('resultBox col-12 d-flex flex-column justify-content-around');
+                        resultBox.addClass('resultPar col-12 d-flex flex-column justify-content-around');
                         resultBox.append("<span>" + "Please choose two different currencies." + "</span>");
                     
                     } else if (firstCode != secondCode && amount <= 0) {
                         
                         resultBox.empty();
                         resultBox.addClass('error');
-                        resultBox.addClass('resultBox col-12 d-flex flex-column justify-content-around');
+                        resultBox.addClass('resultPar col-12 d-flex flex-column justify-content-around');
                         resultBox.append("<span>" + "Make sure that your ammount is > 0" + "</span>")
                         
                     } else {
                         
                         resultBox.empty();
                         resultBox.removeClass('error');
-                        resultBox.addClass('resultBox col-12 d-flex flex-row justify-content-around align-items-center');
-                        resultBox.append("<span>" + "For: " + "</span>");
-                        resultBox.append("<span>" + amount + " " + firstCode + "</span>");
-                        resultBox.append("<span>" + "you will get: " + "</span>");
-                        resultBox.append("<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>");
+                        resultBox.addClass('resultPar col-12 d-flex flex-column justify-content-around');
+                        resultBox.append("<span>" + "For: " + "<span>" + amount + " " + firstCode + "</span>" + "</span>");
+                        resultBox.append("<span>" + "Get: " + "<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>" + "</span>");
                     };
 
                 });

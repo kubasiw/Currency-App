@@ -1,16 +1,17 @@
 body {
     font-family: 'Ubuntu', sans-serif;
-    //background-color: #828b90;
+    min-width: 280px;
 }
 
 header {
     min-height: 10rem;
-    background-color: #828b90;
+    background-color: #003f63;
 }
 
 .section1 {
     min-height:100vh;
-    background-color: #828b90;
+    background-color: #003f63;
+    color: #ffffff;
 }
 
 .title {
@@ -53,18 +54,38 @@ button {
     margin-right:1em;
 }
 
-.resultBox {
+.resultPar {
     height: 10rem;
     background-color: #585e61;
     border-radius: 5px 5px 5px 5px;
+    margin-bottom: 0.5em;
+    border: 1px solid white;
     min-height: 3rem;
     font-size: 2em;
     color:aliceblue;
-    span {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
+        span {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+            span:first-child {
+                span:last-child {
+                    color: #d9534f;
+                    font-weight: 700;
+                }
+            }
+                span:last-child {
+                    span:last-child {
+                        color: #32ea32;
+                        font-weight: 700;
+                    }
+                }
 }
+
+//@media (max-width: 360px) {
+//    .resultPar {
+//        font-size: 1.5em;
+//    }
+//}
 
 .error {
     background-color: #d9534f;
