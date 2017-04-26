@@ -84,32 +84,45 @@ jQuery(document).ready(function(){
                             //console.log(dataArray2[i].mid);
                             first = (dataArray2[i].mid).toFixed(3);
                             firstCode = (dataArray2[i].code);
-                        }
+                        };
                         
                         if (select1.val() == "złoty polski") {
                             first = 1;
                             firstCode = "PLN";
-                        }
+                        };
                         
                         if (select2.val() == dataArray2[i].currency) {
                             //console.log(dataArray2[i].mid);
                             second = (dataArray2[i].mid).toFixed(3);
                             secondCode = (dataArray2[i].code);
-                        }
+                        };
                         
                         if (select2.val() == "złoty polski") {
                             second = 1;
                             secondCode = "PLN";
-                        }
-                        
+                        };
+
                     };
                     
-                    resultBox.addClass('resultBox col-12');
-                    resultBox.append("<p>" + "For:" + "</p>");
-                    resultBox.append("<span>" + amount + " " + firstCode + "</span>");
-                    resultBox.append("<p>" + "you will get:" + "</p>");
-                    resultBox.append("<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>");
-                    
+                    if (firstCode != secondCode && amount > 0){
+                        
+                        resultBox.addClass('resultBox col-12');
+                        resultBox.append("<p>" + "For:" + "</p>");
+                        resultBox.append("<span>" + amount + " " + firstCode + "</span>");
+                        resultBox.append("<p>" + "you will get:" + "</p>");
+                        resultBox.append("<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>");
+                    } else if (firstCode = secondCode && amount > 0) {
+                        resultBox.addClass('resultBox col-12');
+                        resultBox.append("<p>" + "Please choose two different currencies." + "</p>");
+                    } else if (firstCode = secondCode && amount <= 0) {
+                        resultBox.addClass('resultBox col-12');
+                        resultBox.append("<p>" + "Make sure that your ammount is > 0" + "</p>");
+                    } else if (firstCode = secondCode && amount <= 0) {
+                        resultBox.addClass('resultBox col-12');
+                        resultBox.append("<p>" + "Please choose two different currencies." + "</p>");
+                        resultBox.append("<p>" + "Make sure that your ammount is > 0" + "</p>");
+                    };
+
                 });
                 
                 
