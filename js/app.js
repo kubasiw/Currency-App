@@ -106,18 +106,22 @@ jQuery(document).ready(function(){
                     
                     if (firstCode != secondCode && amount > 0){
                         
+                        resultBox.empty();
                         resultBox.addClass('resultBox col-12');
                         resultBox.append("<p>" + "For:" + "</p>");
                         resultBox.append("<span>" + amount + " " + firstCode + "</span>");
                         resultBox.append("<p>" + "you will get:" + "</p>");
                         resultBox.append("<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>");
                     } else if (firstCode = secondCode && amount > 0) {
+                        resultBox.empty();
                         resultBox.addClass('resultBox col-12');
                         resultBox.append("<p>" + "Please choose two different currencies." + "</p>");
                     } else if (firstCode = secondCode && amount <= 0) {
+                        resultBox.empty();
                         resultBox.addClass('resultBox col-12');
                         resultBox.append("<p>" + "Make sure that your ammount is > 0" + "</p>");
                     } else if (firstCode = secondCode && amount <= 0) {
+                        resultBox.empty();
                         resultBox.addClass('resultBox col-12');
                         resultBox.append("<p>" + "Please choose two different currencies." + "</p>");
                         resultBox.append("<p>" + "Make sure that your ammount is > 0" + "</p>");
