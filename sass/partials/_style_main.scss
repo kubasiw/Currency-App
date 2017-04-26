@@ -86,13 +86,17 @@ button {
 }
 
 footer {
-    background-color: #292b2c;
-    height:2.5rem;
-    div a {
-        text-decoration: none;
-        font-size: 0.8rem;
-        color: #9d9d9d; 
-    }
+    min-height:40px;
+    background-color: #fece08;
+        .footerRow {
+            background-color: #fece08;
+            a {
+                text-decoration: none;
+                font-size: 0.6rem;
+                font-weight: 600;
+                color: #003f63; 
+            }
+        }
 }
 
 /* MEDIA QUERY */
