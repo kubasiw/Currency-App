@@ -16,9 +16,9 @@ jQuery(document).ready(function(){
             var dataArray1 = data[0].rates;
             var dataArray2 = data[1].rates;
             var currentDate = data[1].effectiveDate;
-                console.log(dataArray1);
-//                    console.log(dataArray2);
-//                    console.log(currentDate);
+//                console.log(dataArray1);
+//                console.log(dataArray2);
+//                console.log(currentDate);
             var tableDate = jQuery('.tableDate');
             tableDate.prepend("<span>" + "exchange rates last update: " + currentDate + " by api.nbp.pl" + "</span>");
 
@@ -71,6 +71,8 @@ jQuery(document).ready(function(){
                     
                     var first;
                     var second;
+                    var firstCode;
+                    var secondCode;
                     var amount = input.val();
                     
                     //console.log(amount);
@@ -80,28 +82,33 @@ jQuery(document).ready(function(){
                         
                         if (select1.val() == dataArray2[i].currency) {
                             //console.log(dataArray2[i].mid);
-                            first = dataArray2[i].mid;
+                            first = (dataArray2[i].mid).toFixed(3);
+                            firstCode = (dataArray2[i].code);
                         }
                         
                         if (select1.val() == "złoty polski") {
                             first = 1;
+                            firstCode = "PLN";
                         }
                         
                         if (select2.val() == dataArray2[i].currency) {
                             //console.log(dataArray2[i].mid);
-                            second = dataArray2[i].mid;
+                            second = (dataArray2[i].mid).toFixed(3);
+                            secondCode = (dataArray2[i].code);
                         }
                         
                         if (select2.val() == "złoty polski") {
                             second = 1;
+                            secondCode = "PLN";
                         }
                         
                     };
-//                    console.log(first);
-//                    console.log(second);
                     
-                    resultBox.addClass('');
-                    resultBox.append((first * amount) / second.toFixed(3));
+                    resultBox.addClass('resultBox col-12');
+                    resultBox.append("<p>" + "For:" + "</p>");
+                    resultBox.append("<span>" + amount + " " + firstCode + "</span>");
+                    resultBox.append("<p>" + "you will get:" + "</p>");
+                    resultBox.append("<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>");
                     
                 });
                 

@@ -47,6 +47,18 @@ button {
     margin-right:1em;
 }
 
+.resultBox {
+    background-color: #585e61;
+    border-radius: 5px 5px 5px 5px;
+    min-height: 3rem;
+    font-size: 2em;
+    color:aliceblue;
+    span {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
 footer {
     min-height:40px;
     background-color: #222222;
