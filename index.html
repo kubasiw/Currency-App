@@ -26,7 +26,7 @@
     <section class="section1">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6  col-sm-12 col-12 tableDate">
+                <div class="table-responsive col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 tableDate">
                     <table class="table table-sm table-inverse table-borderd">
                         <thead>
                             <tr>
@@ -52,36 +52,44 @@
                     <br/>
                     
                     <div class="row d-flex flex-column">
-                        <h4>choose currency:</h4>
-                        <select class="custom-select select1">
-                            <option>złoty polski</option>
-                        </select>
+                        <div class="col-8">
+                           <label>choose currency:</label>
+                            <select class="custom-select col-6 select1">
+                                <option>złoty polski</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <br/>
                     <br/>
                     
                     <div class="row d-flex flex-column">
-                        <label class="col-form-label">type amount:</label>
-                        <input class="form-control" type="number" value="" id="example-number-input">
+                        <div class="col-8">
+                            <label class="col-form-label">type amount:</label>
+                            <input class="form-control" type="number" value="" id="example-number-input">
+                        </div>
                     </div>
                     
                     <br/>
                     <br/>
                     
                     <div class="row d-flex flex-column">
-                        <h4>choose currency you'd like to buy:</h4>
-                        <select class="custom-select select2">
-                            <option>złoty polski</option>
-                        </select>
+                        <div class="col-8">
+                            <label>choose currency you'd lik to buy:</label>
+                            <select class="custom-select col-6 select2">
+                                <option>złoty polski</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <br/>
                     <br/>
                     
                     <div class="row">
-                        <button type="submit" class="btn btn-primary btn-success button1">exchange</button>
-                        <button type="submit" class="btn btn-primary btn-danger">reset</button>
+                        <div class="col-8">
+                            <button type="submit" class="btn btn-primary btn-success button1">exchange</button>
+                            <button type="submit" class="btn btn-primary btn-danger button2">reset</button>
+                        </div>
                     </div>
                     
                     <br/>
@@ -101,6 +109,7 @@
                <div class="col-12 d-flex justify-content-center"><span class="d-flex align-items-center"><a href="http://www.jakubsiwinski.pl">&#9400; copyright 2017 - www.jakubsiwinski.pl</a></span></div>
            </div>
     </footer>
+    
     
     
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

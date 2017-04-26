@@ -1,15 +1,22 @@
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #828b90;
+    //background-color: #828b90;
 }
 
 header {
     min-height: 10rem;
+    background-color: #828b90;
 }
 
 .section1 {
     min-width:100vh;
+    background-color: #828b90;
 }
+
+.table-responsive {
+    display: table;
+}
+
 .title {
     min-height: 15vh;
 }
@@ -68,18 +75,11 @@ button {
 }
 
 footer {
-    min-height:40px;
-    background-color: #222222;
-        .row {
-            margin-bottom: 0;
-        }
-            .footerRow {
-                //height: 2em;
-                background-color: #222222;
-                a {
-                    text-decoration: none;
-                    font-size: 0.6rem;
-                    color: #9d9d9d; 
-                }
-            }
+    background-color: #292b2c;
+    height:2.5rem;
+    div a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        color: #9d9d9d; 
+    }
 }

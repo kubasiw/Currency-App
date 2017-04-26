@@ -108,40 +108,53 @@ jQuery(document).ready(function(){
                         
                         resultBox.empty();
                         resultBox.addClass('error');
-                        resultBox.addClass('resultBox col-12');
-                        resultBox.append("<p>" + "Please choose two different currencies." + "</p>");
-                        resultBox.append("<p>" + "Make sure that your ammount is > 0" + "</p>");
+                        resultBox.addClass('resultBox col-12 d-flex flex-column justify-content-around');
+                        resultBox.append("<span>" + "Please choose two different currencies." + "</span>");
+                        resultBox.append("<span>" + "Make sure that your ammount is > 0" + "</span>");
                     
                     } else if (firstCode == secondCode && amount > 0) {
                         
                         resultBox.empty();
                         resultBox.addClass('error');
-                        resultBox.addClass('resultBox col-12');
-                        resultBox.append("<p>" + "Please choose two different currencies." + "</p>");
+                        resultBox.addClass('resultBox col-12 d-flex flex-column justify-content-around');
+                        resultBox.append("<span>" + "Please choose two different currencies." + "</span>");
                     
                     } else if (firstCode != secondCode && amount <= 0) {
                         
                         resultBox.empty();
                         resultBox.addClass('error');
-                        resultBox.addClass('resultBox col-12');
-                        resultBox.append("<p>" + "Make sure that your ammount is > 0" + "</p>")
+                        resultBox.addClass('resultBox col-12 d-flex flex-column justify-content-around');
+                        resultBox.append("<span>" + "Make sure that your ammount is > 0" + "</span>")
                         
                     } else {
                         
                         resultBox.empty();
                         resultBox.removeClass('error');
-                        resultBox.addClass('resultBox col-12 d-flex flex-column');
-                        resultBox.append("<p>" + "For:" + "</p>");
+                        resultBox.addClass('resultBox col-12 d-flex flex-row justify-content-around align-items-center');
+                        resultBox.append("<span>" + "For: " + "</span>");
                         resultBox.append("<span>" + amount + " " + firstCode + "</span>");
-                        resultBox.append("<p>" + "you will get:" + "</p>");
+                        resultBox.append("<span>" + "you will get: " + "</span>");
                         resultBox.append("<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>");
                     };
 
                 });
                 
+                function reset() {
+                
+                    var reset = jQuery('.button2');
+
+                    reset.on('click', function() {
+                        resultBox.empty();
+                        resultBox.removeClass();
+                    })
+                };
+                reset();
                 
             };
             count();
+            
+            
+    
             
             
         
