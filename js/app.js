@@ -141,8 +141,9 @@ jQuery(document).ready(function(){
                     var reset = jQuery('.button2');
 
                     reset.on('click', function() {
-                        resultBox.empty(); // we clearing box
+                        resultBox.empty(); // box clearing
                         resultBox.removeClass(); // we remove classes
+                        jQuery('input').val(''); // input amount clearing
                         select1.prop('selectedIndex', 0); // and we put into select window ...
                         select2.prop('selectedIndex', 0); // first option element
                     });
