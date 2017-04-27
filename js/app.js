@@ -14,6 +14,9 @@ jQuery(document).ready(function(){
             var dataArray1 = data[0].rates;
             var dataArray2 = data[1].rates;
             var currentDate = data[1].effectiveDate;
+            
+            
+            
             // this one injecting current date above the table
             var tableDate = jQuery('.tableDate');
             tableDate.prepend("<span>" + "exchange rates last update: " + currentDate + " by api.nbp.pl" + "</span>");
@@ -149,7 +152,7 @@ jQuery(document).ready(function(){
                     });
                 };
                 reset();
-                
+
             };
             count();
             

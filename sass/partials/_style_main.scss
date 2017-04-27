@@ -3,6 +3,12 @@ body {
     min-width: 280px;
 }
 
+.form-control {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 2em;
+}
+
 header {
     min-height: 10rem;
     background-color: #003f63;
@@ -101,6 +107,12 @@ footer {
                 color: #003f63; 
             }
         }
+}
+
+#form1 {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 2em;
 }
 
 /* MEDIA QUERY */
