@@ -13,11 +13,7 @@ jQuery(document).ready(function(){
         }).done(function(data){
             
             var ourPeriod = [];
-            var select1val = jQuery('.select1').val();
-            var select2val = jQuery('.select2').val();
             
-            console.log(select1val);
-            console.log(select2val);
                 
                 for (var i=0; i<data.length; i++) {
                     if (i && (i % 2 === 0)) {
@@ -31,23 +27,37 @@ jQuery(document).ready(function(){
                     
                 var days = [];
                 var daysRates = [];
+                var daysRatesMid = [];
 
                 for (var i=0; i<ourPeriod.length; i++) {
                     days.push(ourPeriod[i].effectiveDate);
 
                 };
 
-                    console.log(days);
-                console.log(daysRates);
+                console.log(days);
+    
 
-                var found;
-                ourPeriod.some(function (obj) {
-                    if (ourPeriod.effectiveDate === days[1]) {
-                        found = obj;
-                        return true;
+                for (var i in ourPeriod) {
+                    if (ourPeriod[i].effectiveDate == days[i]) {
+                        daysRates.push(ourPeriod[i].rates);
                     }
+                }
+                
+                jQuery('.button1').on('click', function(){
+                    
+                    var select1val = jQuery('.select1').val();
+                    var select2val = jQuery('.select2').val();
+                    console.log(select1val);
+
+                    for (var i=0; i<daysRates.length; i++) {
+                        daysRates.push(daysRates[i]);
+                    }
+                    
                 });
-                console.log(found);
+                
+                
+                console.log(daysRates);
+                
 
                     var data = {
                         labels: days,
