@@ -52,10 +52,11 @@ jQuery(document).ready(function(){
             // and loop array from nbp
             for (var i=0; i<dataArray2.length; i++) {
                 // to inject each currency as a new option od select tag
-                select1.append("<option>" + dataArray2[i].currency + "</option>");
+                select1.append("<option>" + dataArray2[i].currency  + "</option>");
                 select2.append("<option>" + dataArray2[i].currency + "</option>");
-
             };
+            
+                
             
             //lets creat count function
             function count() {

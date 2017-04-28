@@ -35,27 +35,19 @@ jQuery(document).ready(function(){
                 for (var i=0; i<ourPeriod.length; i++) {
                     days.push(ourPeriod[i].effectiveDate);
 
-                    for (var j=0; j<ourPeriod.length; j++) {
-                        daysRates.push(ourPeriod[j].rates[j]);
-                    }
-
                 };
 
                     console.log(days);
                 console.log(daysRates);
 
-                        var data1 = [];
-
-                        for (var n=0; n<days.length; n++) {
-                            for ( var m=0; m<ourPeriod.length; m++) {
-                                if (days[n] == ourPeriod[m].effecitveDate) {
-                                    console.log('hmmm');
-                                } else {
-                                    console.log('yyyym');
-                                }
-                            };
-                        };
-
+                var found;
+                ourPeriod.some(function (obj) {
+                    if (ourPeriod.effectiveDate === days[1]) {
+                        found = obj;
+                        return true;
+                    }
+                });
+                console.log(found);
 
                     var data = {
                         labels: days,
