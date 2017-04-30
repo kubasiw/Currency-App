@@ -35,19 +35,57 @@ jQuery(document).ready(function(){
                 
                 console.log(days);
                 console.log(daysRates);
-                var daysRatesMid = [];
-                console.log(daysRatesMid);
+                
+                ;
                 
                 jQuery('.button1').on('click', function(){
                     
-                    var midIndex = jQuery('.select1 option:selected').index();
-                    
-                    for (var i=0; i<daysRates.length; i++) {
+                   
                         
-                        var dayRatesCurs = Array.from(daysRates[i]);
-                        //console.log(dayRatesCurs);
-                        daysRatesMid.push(dayRatesCurs[midIndex - 1].mid);
+                    var daysRatesMid1 = [];
+
+                    var select1val = jQuery('.select1').val();
+
+                    var midIndex1 = jQuery('.select1 option:selected').index();
+
+                    if (midIndex1 == 0) {
+                        for (var i=0; i<15; i++) {
+                            daysRatesMid1.push(1);
+                        }
+                        
+                    } else if (select1val != 'polski złoty') {
+
+                        for (var i=0; i<daysRates.length; i++) {
+
+                            var dayRatesCurs = Array.from(daysRates[i]);
+                            //console.log(dayRatesCurs);
+                            daysRatesMid1.push(dayRatesCurs[midIndex1 - 1].mid);
+                        };
                     };
+                    
+                    var daysRatesMid2 = [];
+                    
+                    var select2val = jQuery('.select2').val();
+
+                    var midIndex2 = jQuery('.select2 option:selected').index();
+                    
+                    if (midIndex2 == 0) {
+                        for (var i=0; i<15; i++) {
+                            daysRatesMid2.push(1);
+                        }
+                    } else if (select1val != 'polski złoty') {
+
+                        for (var i=0; i<daysRates.length; i++) {
+
+                            var dayRatesCurs = Array.from(daysRates[i]);
+                            //console.log(dayRatesCurs);
+                            daysRatesMid2.push(dayRatesCurs[midIndex2 - 1].mid);
+                        };
+                    };
+ 
+                    
+                    
+                    
                     
                     $(function () {
 
@@ -62,7 +100,7 @@ jQuery(document).ready(function(){
                                     pointStrokeColor: "#fff",
                                     pointHighlightFill: "#fff",
                                     pointHighlightStroke: "rgba(220,220,220,1)",
-                                    data: daysRatesMid
+                                    data: daysRatesMid1
                                 },
                                 {
                                     label: "My Second dataset",
@@ -72,7 +110,7 @@ jQuery(document).ready(function(){
                                     pointStrokeColor: "#fff",
                                     pointHighlightFill: "#fff",
                                     pointHighlightStroke: "rgba(151,187,205,1)",
-                                    data: []
+                                    data: daysRatesMid2
                                 }
                                 ]
                         };
