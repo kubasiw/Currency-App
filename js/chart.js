@@ -23,82 +23,72 @@ jQuery(document).ready(function(){
             
             console.log(ourPeriod);
             
-            $(function () {
-                    
-                var days = [];
+            var days = [];
                 var daysRates = [];
-                var daysRatesMid = [];
+                
 
                 for (var i=0; i<ourPeriod.length; i++) {
                     days.push(ourPeriod[i].effectiveDate);
-
+                    daysRates.push(ourPeriod[i].rates);
                 };
-
+                
+                
                 console.log(days);
-    
-
-                for (var i in ourPeriod) {
-                    if (ourPeriod[i].effectiveDate == days[i]) {
-                        daysRates.push(ourPeriod[i].rates);
-                    }
-                }
+                console.log(daysRates);
+                var daysRatesMid = [];
+                console.log(daysRatesMid);
                 
                 jQuery('.button1').on('click', function(){
                     
-                    var select1val = jQuery('.select1').val();
-                    var select2val = jQuery('.select2').val();
-                    console.log(select1val);
-
-                    for (var i=0; i<daysRates.length; i++) {
-                        daysRates.push(daysRates[i]);
-                    }
+                    var midIndex = jQuery('.select1 option:selected').index();
                     
-                });
-                
-                
-                console.log(daysRates);
-                
+                    for (var i=0; i<daysRates.length; i++) {
+                        
+                        var dayRatesCurs = Array.from(daysRates[i]);
+                        //console.log(dayRatesCurs);
+                        daysRatesMid.push(dayRatesCurs[midIndex - 1].mid);
+                    };
+                    
+                    $(function () {
 
-                    var data = {
-                        labels: days,
-                        datasets: [
-                            {
-                                label: "My First dataset",
-                                fillColor: "rgba(220,220,220,0.2)",
-                                strokeColor: "rgba(220,220,220,1)",
-                                pointColor: "rgba(220,220,220,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(220,220,220,1)",
-                                data: []
-                            },
-                            {
-                                label: "My Second dataset",
-                                fillColor: "rgba(151,187,205,0.2)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                data: []
-                            }
-                            ]
+                        var data = {
+                            labels: days,
+                            datasets: [
+                                {
+                                    label: "My First dataset",
+                                    fillColor: "rgba(220,220,220,0.2)",
+                                    strokeColor: "rgba(220,220,220,1)",
+                                    pointColor: "rgba(220,220,220,1)",
+                                    pointStrokeColor: "#fff",
+                                    pointHighlightFill: "#fff",
+                                    pointHighlightStroke: "rgba(220,220,220,1)",
+                                    data: daysRatesMid
+                                },
+                                {
+                                    label: "My Second dataset",
+                                    fillColor: "rgba(151,187,205,0.2)",
+                                    strokeColor: "rgba(151,187,205,1)",
+                                    pointColor: "rgba(151,187,205,1)",
+                                    pointStrokeColor: "#fff",
+                                    pointHighlightFill: "#fff",
+                                    pointHighlightStroke: "rgba(151,187,205,1)",
+                                    data: []
+                                }
+                                ]
                         };
 
+                        var option = {
+                            responsive: true,
+                        };
 
-
-
-                var option = {
-                    responsive: true,
-                };
-
-                // Get the context of the canvas element we want to select
-                var ctx = document.getElementById("myChart").getContext('2d');
-                var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of the chart.
-            });
-
+                        // Get the context of the canvas element we want to select
+                        var ctx = document.getElementById("myChart").getContext('2d');
+                        var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of the chart.
+                    });
+                    
+                });
             
-            
+
         }).fail(function(error) {
             alert("error");
         });
