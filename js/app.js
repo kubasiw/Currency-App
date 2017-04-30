@@ -135,6 +135,7 @@ jQuery(document).ready(function(){
                         resultBox.addClass('resultPar col-12 d-flex flex-column justify-content-around');
                         resultBox.append("<span>" + "For: " + "<span>" + amount + " " + firstCode + "</span>" + "</span>");
                         resultBox.append("<span>" + "Get: " + "<span>" + ((first*amount)/second).toFixed(2) + " " + secondCode + "</span>" + "</span>");
+                        jQuery.getScript("chart.js");
                     };
 
                 });

@@ -83,10 +83,6 @@ jQuery(document).ready(function(){
                         };
                     };
  
-                    
-                    
-                    
-                    
                     $(function () {
 
                         var data = {
@@ -122,6 +118,7 @@ jQuery(document).ready(function(){
                         // Get the context of the canvas element we want to select
                         var ctx = document.getElementById("myChart").getContext('2d');
                         var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of the chart.
+
                     });
                     
                 });
