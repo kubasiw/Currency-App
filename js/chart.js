@@ -37,6 +37,7 @@ jQuery(document).ready(function(){
                 console.log(daysRates);
                 
                 ;
+            
                 
                 jQuery('.button1').on('click', function(){
                     
@@ -122,6 +123,7 @@ jQuery(document).ready(function(){
                     });
                     
                 });
+ 
             
 
         }).fail(function(error) {

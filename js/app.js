@@ -64,6 +64,7 @@ jQuery(document).ready(function(){
                 var button1 = jQuery('.button1'); //exchane button
                 var input = jQuery('input');
                 var resultBox = jQuery('.resultBox'); 
+                var chart = jQuery('#myChart');
                 
                 // when we click on exchane button:
                 button1.on('click', function() {
@@ -144,6 +145,7 @@ jQuery(document).ready(function(){
                 function reset() {
                 
                     var reset = jQuery('.button2');
+                    
 
                     reset.on('click', function() {
                         resultBox.empty(); // box clearing
