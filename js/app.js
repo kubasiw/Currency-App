@@ -43,16 +43,24 @@ jQuery(document).ready(function(){
                 tdCurr.addClass('curr');
                 tdCode.addClass('code');
                 tdMid.addClass('mid d-flex justify-content-end');
-                
             };
             
+            var midsCol = jQuery('tr td:last-child');
+            var midsColMids = []
+            for (var i=0; i<midsCol.length; i++) {
+                midsColMids.push(midsCol[i].innerHTML);
+            }
+            
+            console.log(midsColMids);
+          
+
             // we need to find 2 select elements
             var select1 = jQuery('.select1');
             var select2 = jQuery('.select2');
             // and loop array from nbp
             for (var i=0; i<dataArray2.length; i++) {
                 // to inject each currency as a new option od select tag
-                select1.append("<option>" + dataArray2[i].currency  + "</option>");
+                select1.append("<option>" + dataArray2[i].currency + "</option>");
                 select2.append("<option>" + dataArray2[i].currency + "</option>");
             };
             

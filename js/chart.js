@@ -21,7 +21,7 @@ jQuery(document).ready(function(){
                     };
                 };
             
-            console.log(ourPeriod);
+            //console.log(ourPeriod);
             
             var days = [];
                 var daysRates = [];
@@ -33,8 +33,8 @@ jQuery(document).ready(function(){
                 };
                 
                 
-                console.log(days);
-                console.log(daysRates);
+                //console.log(days);
+                //console.log(daysRates);
                 
                 ;
             
