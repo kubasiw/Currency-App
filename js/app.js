@@ -15,8 +15,6 @@ jQuery(document).ready(function(){
             var dataArray2 = data[1].rates;
             var currentDate = data[1].effectiveDate;
             
-            
-            
             // this one injecting current date above the table
             var tableDate = jQuery('.tableDate');
             tableDate.prepend("<span>" + "exchange rates last update: " + currentDate + " by api.nbp.pl" + "</span>");
@@ -42,7 +40,7 @@ jQuery(document).ready(function(){
                 // because we want to add some classes each of them
                 tdCurr.addClass('curr');
                 tdCode.addClass('code');
-                tdMid.addClass('mid d-flex justify-content-end');
+                tdMid.addClass('mid text-right');
             };
             
             var midsCol = jQuery('tr td:last-child');
@@ -173,5 +171,18 @@ jQuery(document).ready(function(){
         });
     };
     getData();
+    
+    function lookFor(){
+        
+        var button1 = jQuery('.button1');
+
+        button1.on('click', function(){          // while clicking on button
+            var id = jQuery(this).attr('href');  // id will get href from button
+            var elemOffset = jQuery(id).offset(); // elemOffset will find element with same id as button href and get offset
+            
+            jQuery('html, body').animate({scrollTop: elemOffset.top},500);
+        });
+    };
+    lookFor();
     
 }); // end of DOM
